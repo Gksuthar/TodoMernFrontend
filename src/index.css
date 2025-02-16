@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+    font-family: "Nunito", serif;
+    background: #f1f1f1;
+}
+
+.ReactCollapse--collapse {
+    transition: height 300ms;
+  }
+  .btn-blue{
+    background: #3872fa !important;
+    color: #fff !important;
+  }
+
+  .btn-org:hover{
+    background: #000 !important;
+}
+.btn-lg{
+    font-size: 18px !important;
+    padding: 10px !important;}
+.btn-org{
+    background: #ff5252 !important;
+    color: #fff !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    padding: 7px 20px !important;
+    
+}

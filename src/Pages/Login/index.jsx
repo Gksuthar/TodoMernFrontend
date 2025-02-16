@@ -155,13 +155,13 @@ const Login = () => {
               </Link>{" "}
             </p>
 
-            <p className="text-center text-[12px] font-[500] mb-2 mt-4">
+            {/* <p className="text-center text-[12px] font-[500] mb-2 mt-4">
               Or continue With Social Account{" "}
             </p>
             <Button className="flex gap-3 w-full !bg-[#f1f1f1] !btn-lg !text-black mt-2">
               <FcGoogle className="text-[20px]" />
               Login with Google
-            </Button>
+            </Button> */}
           </form>
         </div>
       </div>

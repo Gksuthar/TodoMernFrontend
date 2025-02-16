@@ -44,7 +44,7 @@ const Verify = () => {
     <div className="flex items-center justify-center min-h-[300px] bg-gray-100 p-4">
       <div className="w-full max-w-sm bg-white shadow-lg p-6 rounded-lg">
         <h2 className="text-center text-xl font-semibold">Verify OTP</h2>
-        <p className="text-gray-600 text-sm text-center mt-2"> OTP sent to gkstar434@gmail.com</p>
+        <p className="text-gray-600 text-sm text-center mt-2"> OTP sent on Your Emaill address</p>
         <input
           type="text"
           maxLength={6}
@@ -60,9 +60,9 @@ const Verify = () => {
         >
           Verify
         </button>
-        <p className="text-center text-sm text-gray-500 mt-2">
+        {/* <p className="text-center text-sm text-gray-500 mt-2">
           Didn’t receive OTP? <span className="text-blue-500 cursor-pointer link">Resend</span>
-        </p>
+        </p> */}
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ export const Context = createContext();
 function App() {
   const [isSideBarOpen, setSideBarOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
-  const AppUrl = "https://todomernbackend-nsqq.onrender.com";
+  const AppUrl = "https://todomernbackend-9bpz.onrender.com";
     const [searchContent,setSearchContent] = useState("")
   
   const navigate = useNavigate();

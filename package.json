@@ -16,6 +16,7 @@
     "@mui/material": "^6.4.4",
     "@mui/styled-engine-sc": "^6.4.3",
     "@toolpad/core": "^0.12.0",
+    "axios": "^1.7.9",
     "client": "file:",
     "cors": "^2.8.5",
     "react": "^19.0.0",

@@ -240,7 +240,7 @@ const Products = () => {
                           <option value="IN_PROGRESS">In Progress</option>
                           <option value="COMPLETE">Complete</option>
                           {/* <option className="hidden" value="EXPIRED">Expired</option> */}
-                          <option className="hidden" value="EXPIRED">Expired</option>
+                          <option className="" value="EXPIRED">Expired</option>
  
 
                         </select>

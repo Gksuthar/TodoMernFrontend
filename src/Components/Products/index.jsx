@@ -184,8 +184,8 @@ const Products = () => {
       <option value="ACTIVE">Active</option>
       <option value="IN_PROGRESS">In Progress</option>
       <option value="COMPLETE">Complete</option>
-      <option value="EXPIRED">Expired</option>
-    </select>
+      <option value="EXPIRED" className="">Expired</option>
+      </select>
 
     {/* Sort Button */}
     <Button

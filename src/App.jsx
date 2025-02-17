@@ -19,7 +19,7 @@ export const Context = createContext();
 function App() {
   const [isSideBarOpen, setSideBarOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
-  const AppUrl = "https://todomernbackend-iz47.onrender.com";
+  const AppUrl = "http://localhost:1000";
     const [searchContent,setSearchContent] = useState("")
   
   const navigate = useNavigate();

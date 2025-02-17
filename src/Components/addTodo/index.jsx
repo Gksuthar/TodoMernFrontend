@@ -83,23 +83,24 @@ console.log(istTime); // Output: 16/02/2025, 20:25:00
           </div>
 
           <input
-type="datetime-local"
-{...register("deadline", { required: "Deadline is required" })}
-onChange={(e) => {
-  const utcDate = new Date(e.target.value);
-  const istOffset = 5.5 * 60 * 60 * 1000; // IST offset from UTC
-  const istDate = new Date(utcDate.getTime() + istOffset);
+  type="datetime-local"
+  {...register("deadline", { required: "Deadline is required" })}
+  onChange={(e) => {
+    const utcDate = new Date(e.target.value);
+    const istOffset = 5.5 * 60 * 60 * 1000; // IST offset from UTC
+    const istDate = new Date(utcDate.getTime() + istOffset);
 
-  console.log("Deadline in UTC:", utcDate.toISOString());
-  console.log("Deadline in IST:", istDate.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }));
-  
-  // Store UTC format in the form data to ensure consistency on the backend
-  setValue("deadline", utcDate.toISOString());
-}}
-className={`mt-1 block w-full px-3 py-2 border ${
-  errors.deadline ? "border-red-500" : "border-gray-300"
-} rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500`}
+    console.log("Deadline in UTC:", utcDate.toISOString());
+    console.log("Deadline in IST:", istDate.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }));
+    
+    // Store UTC format in the form data for backend
+    setValue("deadline", utcDate.toISOString());
+  }}
+  className={`mt-1 block w-full px-3 py-2 border ${
+    errors.deadline ? "border-red-500" : "border-gray-300"
+  } rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500`}
 />
+
 
           <button
             type="submit"

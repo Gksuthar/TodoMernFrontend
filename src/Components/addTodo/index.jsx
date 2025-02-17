@@ -1,29 +1,28 @@
-import React, { useContext } from "react";
+import React from "react";
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
 import { Context } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 const AddTodo = () => {
   const context = useContext(Context);
-  const url = context.AppUrl;
+  const url = context.AppUrl
   const navigate = useNavigate();
-
-
-
-  console.log(formattedTime); // For debugging, should print: "2025-02-16T20:25"
+  const utcTime = "2025-02-16T14:55:00.000Z";
+const istTime = new Date(utcTime).toLocaleString("en-IN", { 
+  timeZone: "Asia/Kolkata", 
+  hour12: false 
+});
+console.log(istTime); // Output: 16/02/2025, 20:25:00
 
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors },
   } = useForm();
-  const formattedTime = localTime.toISOString().slice(0, 16); // Format as yyyy-MM-ddThh:mm
-
-  const token = localStorage.getItem('accessToken');
-
+  const token = localStorage.getItem('accessToken')
   const addTodoTask = async (data) => {
     try {
       const response = await axios.post(
@@ -37,7 +36,7 @@ const AddTodo = () => {
           withCredentials: true, // If using cookies
         }
       );
-
+      
       if (response.status === 201) {
         context.openAlertBox("success", "Task added successfully");
         // navigate('/');
@@ -83,27 +82,17 @@ const AddTodo = () => {
             {errors.description && <p className="text-red-500 text-sm mt-1">{errors.description.message}</p>}
           </div>
 
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">Deadline</label>
-            <input
+          <input
   type="datetime-local"
   {...register("deadline", { required: "Deadline is required" })}
-  value={formattedTime} // Use the formatted time here
   onChange={(e) => {
     const utcDate = new Date(e.target.value);
-    const istOffset = 5.5 * 60 * 60 * 1000; // IST offset from UTC
-    const istDate = new Date(utcDate.getTime() + istOffset);
-
-    console.log("Deadline in UTC:", utcDate.toISOString());
+    const istDate = new Date(utcDate.getTime() + (5.5 * 60 * 60 * 1000));
     console.log("Deadline in IST:", istDate.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }));
-
-    // Store UTC format in the form data for backend
-    setValue("deadline", utcDate.toISOString()); // Use setValue from useForm
   }}
   className={`mt-1 block w-full px-3 py-2 border ${errors.deadline ? "border-red-500" : "border-gray-300"} rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500`}
 />
-            {errors.deadline && <p className="text-red-500 text-sm mt-1">{errors.deadline.message}</p>}
-          </div>
+
 
           <button
             type="submit"

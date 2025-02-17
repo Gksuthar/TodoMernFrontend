@@ -27,16 +27,16 @@ const Products = () => {
   // Function to auto-expire tasks
   const autoExpireTasks = async () => {
     try {
-      const response = await axios.get(`${url}/api/task/auto-expire`,
-         {
+      const response = await axios.get(`${url}/api/task/auto-expire`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }
-      );
+      });
       console.log("Auto-expire response:", response.data);
+      return response.data;
     } catch (error) {
       console.error("Error auto-expiring tasks:", error.message);
+      throw error;
     }
   };
 

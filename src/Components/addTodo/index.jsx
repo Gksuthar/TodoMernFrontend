@@ -95,12 +95,13 @@ console.log(istTime); // Output: 16/02/2025, 20:25:00
     console.log("Deadline in IST:", istDate.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }));
     
     // Store UTC format in the form data for backend
-    setValue("deadline", utcDate.toISOString());
+    setValue("deadline", utcDate.toISOString()); // Use setValue from useForm
   }}
   className={`mt-1 block w-full px-3 py-2 border ${
     errors.deadline ? "border-red-500" : "border-gray-300"
   } rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500`}
 />
+
 
 
           <button

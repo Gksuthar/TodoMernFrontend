@@ -19,7 +19,8 @@ console.log(istTime); // Output: 16/02/2025, 20:25:00
 
   const {
     register,
-    handleSubmit,
+    handleSubmit,  setValue,  // <-- Add this line
+
     formState: { errors },
   } = useForm();
   const token = localStorage.getItem('accessToken')
